@@ -1,0 +1,38 @@
+services:
+  #Database service
+  db:
+    image: postgres:latest
+    container_name: my_db_compose
+    ports:
+      - "55432:5432"
+    environment:
+      POSTGRES_DB: khajornyuth
+      POSTGRES_USER: khajornyuth
+      POSTGRES_PASSWORD: khajornyuth
+    networks:
+      - strapi-net
+
+  #strapi service
+  strapi:
+    image: prawee/strapi:latest
+    container_name: my_app_compose
+    ports:
+      - "8080:1337"
+    volumes: 
+      - "./strapi-data:/srv/app"
+    environment:
+      DATABASE_CLIENT: postgres
+      DATABASE_NAME: khajornyuth
+      DATABASE_HOST: my_db_compose
+      DATABASE_PORT: 5432
+      DATABASE_USERNAME: khajornyuth
+      DATABASE_PASSWORD: khajornyuth
+      DATABASE_SSL: false
+    depends_on:
+      - db
+    networks:
+      - strapi-net
+
+networks:
+  strapi-net:
+    driver: bridge
