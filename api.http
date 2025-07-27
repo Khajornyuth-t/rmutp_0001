@@ -6,7 +6,7 @@
 
 
 
-###Indentification / Registrater account
+### Identification / Register account
 POST {{host}}/auth/local/register HTTP/1.1
 Content-Type: application/json
 
@@ -16,7 +16,7 @@ Content-Type: application/json
     "password": "{{password}}"
 }
 
-### Test users endpoint  
+### Get all users  
 GET {{host}}/users HTTP/1.1
 Content-Type: application/json
 
@@ -29,3 +29,16 @@ Content-Type: application/json
     "password": "{{password}}"
 }
 
+### Get profile
+GET {{host}}/users/me HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzUzNjM1MTcwLCJleHAiOjE3NTYyMjcxNzB9.y8nd6EDtTQVxE5eAw_avFl1Y1rFLBiFCawaIWXPLz_o
+
+### Update profile
+PUT {{host}}/users/6 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzUzNjM1MTcwLCJleHAiOjE3NTYyMjcxNzB9.y8nd6EDtTQVxE5eAw_avFl1Y1rFLBiFCawaIWXPLz_o
+
+{
+    "username": "{{username}}_updated_2"
+}
