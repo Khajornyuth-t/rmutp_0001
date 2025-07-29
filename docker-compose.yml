@@ -4,7 +4,7 @@ services:
     image: postgres:latest
     container_name: my_db_compose
     ports:
-      - "55432:5432"
+      - ${DB_PORT}:5432
     environment:
       POSTGRES_DB: ${DATABASE_NAME}
       POSTGRES_USER: ${DATABASE_USER}
@@ -12,12 +12,13 @@ services:
     networks:
       - strapi-net
 
+
   #strapi service
   strapi:
     image: prawee/strapi:latest
     container_name: my_app_compose
     ports:
-      - "8090:1337"
+      - ${APP_PORT}:1337
     volumes: 
       - "./strapi-data:/srv/app"
     environment:
