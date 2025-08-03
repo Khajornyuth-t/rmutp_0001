@@ -3,6 +3,7 @@
 @username = {{$dotenv USER_USERNAME1}}
 @password = {{$dotenv USER_PASSWORD1}}
 @email = {{$dotenv USER_EMAIL1}}
+@USER_TOKEN = {{$dotenv USER_TOKEN1}}
 
 
 
@@ -32,13 +33,13 @@ Content-Type: application/json
 ### Get profile
 GET {{host}}/users/me HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzUzNjM1MTcwLCJleHAiOjE3NTYyMjcxNzB9.y8nd6EDtTQVxE5eAw_avFl1Y1rFLBiFCawaIWXPLz_o
+Authorization: Bearer {{USER_TOKEN}}
 
 ### Update profile
 PUT {{host}}/users/6 HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzUzNjM1MTcwLCJleHAiOjE3NTYyMjcxNzB9.y8nd6EDtTQVxE5eAw_avFl1Y1rFLBiFCawaIWXPLz_o
+Authorization: Bearer {{USER_TOKEN}}
 
 {
-    "username": "{{username}}_updated_2"
+    "username": "{{username}}_updated_1"
 }
