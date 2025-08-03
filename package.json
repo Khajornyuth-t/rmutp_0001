@@ -1,5 +1,17 @@
 {
   "dependencies": {
-    "prisma": "^6.13.0"
+    "chokidar": "^4.0.3",
+    "dotenv": "^16.6.1",
+    "fast-check": "^3.23.2",
+    "find-up-simple": "^1.0.1",
+    "index-to-position": "^1.1.0",
+    "parse-json": "^8.3.0",
+    "prisma": "^6.13.0",
+    "pure-rand": "^6.1.0",
+    "read-package-up": "^11.0.0",
+    "read-pkg": "^9.0.1",
+    "readdirp": "^4.1.2",
+    "type-fest": "^4.41.0",
+    "unicorn-magic": "^0.3.0"
   }
 }
