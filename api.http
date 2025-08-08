@@ -1,9 +1,9 @@
 #Test API
 @host = {{$dotenv HOST_URL}}
-@username = {{$dotenv USER_USERNAME1}}
-@password = {{$dotenv USER_PASSWORD1}}
-@email = {{$dotenv USER_EMAIL1}}
-@USER_TOKEN = {{$dotenv USER_TOKEN1}}
+@username = {{$dotenv USER_USERNAME}}
+@password = {{$dotenv USER_PASSWORD}}
+@email = {{$dotenv USER_EMAIL}}
+@USER_TOKEN = {{$dotenv USER_TOKEN}}
 
 
 
@@ -36,7 +36,7 @@ Content-Type: application/json
 Authorization: Bearer {{USER_TOKEN}}
 
 ### Update profile
-PUT {{host}}/users/6 HTTP/1.1
+PUT {{host}}/users/2 HTTP/1.1
 Content-Type: application/json
 Authorization: Bearer {{USER_TOKEN}}
 
