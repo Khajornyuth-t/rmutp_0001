@@ -6,7 +6,7 @@ const prisma = new PrismaClient()
 async function main() {
   const user = await prisma.user.create({
     data: {
-      username: 'testuser2',
+      username: 'testuser4',
       password: 'password123',
       mobile: '0812345678',     // ต้อง 10 ตัว
       cardId: '1234567890123'   // ต้อง 13 ตัว
