@@ -1,6 +1,14 @@
-generator client {
+// prisma/schema.prisma
+
+// JavaScript client
+generator js_client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
+  output   = "../generated/prisma/js"  // แยกใส่ js folder
+}
+
+// Python client  
+generator py_client {
+  provider = "prisma-client-py"
 }
 
 datasource db {
@@ -12,6 +20,6 @@ model User {
   id        Int    @id @default(autoincrement())
   username  String
   password  String
-  mobile    String    //mobile
-  cardId    String    // ID No
+  mobile    String
+  cardId    String
 }
